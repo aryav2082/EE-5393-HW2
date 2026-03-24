@@ -1,1 +1,24 @@
+import numpy as np
 
+def fib(start_a,start_b,steps=12):
+    A=start_a
+    B=start_b
+    sequence=[(A,B)]
+    print(f"{'Steps = 12'}")
+
+    for i in range(1,steps):
+        C=A+B
+        old_a,old_b=A,B
+        A=B
+        B=C
+        sequence.append((A,B))
+    return B
+
+print("Starting Values (0,1)")
+final_01=fib(0,1)
+print(f"\nFinal Fibonacci Number after 12 steps: {final_01}")
+
+print("    ")
+print("Case 2: Starting Values (3,7)")
+final_37=fib(3,7)
+print(f"\nFinal Fibonacci Number after 12 steps: {final_37}")
